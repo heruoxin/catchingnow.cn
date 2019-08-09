@@ -173,6 +173,7 @@ Chrome 插件下载地址： <https://chrome.google.com/webstore/detail/njdmefpl
 <img src="./pic/clipstack.png?raw=true" width="160">
 
 [下载](https://coolapk.com/apk/com.catchingnow.tinyclipboardmanager)
+
 剪纸堆一个超轻量级剪贴板历史记录管理软件
 
 
@@ -266,5 +267,5 @@ https://zhuanlan.zhihu.com/p/36235128
 
 
 
--- 完 --
+
 
