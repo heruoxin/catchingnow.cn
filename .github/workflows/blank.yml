@@ -21,20 +21,24 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2.1.1
+      with:
+        node-version: '12'
     - uses: ruby/setup-ruby@v1.40.0
       with:
         ruby-version: 2.6
         bundler-cache: true
 
+    - name: Generate jekyll
     - run: |
         cd ./docs
         bundle install --path vendor/bundle
         bundle exec jekyll build
     
-    - name: serverless deploy
-      uses: drieshooghe/github-action@path-1
-      with:
-        args: deploy
+    - name: Deploy serverless
+    - run: |
+        npm install -g serverless
+        serverless deploy --debug
       env: 
         TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
         TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
