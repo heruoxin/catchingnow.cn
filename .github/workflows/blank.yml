@@ -31,7 +31,6 @@ jobs:
         bundle install --path vendor/bundle
         bundle exec jekyll build
 
-    - run:  cd ./_site
     - run: serverless deploy
       env: 
         TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
