@@ -24,6 +24,7 @@ jobs:
     - uses: ruby/setup-ruby@v1.40.0
       with:
         ruby-version: 2.6
+        bundler-cache: true
 
     - run: |
         cd ./docs
@@ -31,7 +32,7 @@ jobs:
         bundle exec jekyll build
     
     - name: serverless deploy
-      uses: serverless/github-action@v1.53.0
+      uses: drieshooghe/github-action@path-1
       with:
         args: deploy
       env: 
